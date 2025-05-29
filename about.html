@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de - Dark Forest</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    main {
+      margin-top: 80px;
+      padding: 2rem;
+    }
+
+    .nav-links a,
+    .bottom-navbar a {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .bottom-navbar a:hover {
+      background-color: rgba(245, 245, 220, 0.2);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Dark Forest</h1>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Sobre el Juego</h2>
+    <p>
+      Dark Forest es una experiencia inmersiva de terror psicológico diseñada especialmente para dispositivos móviles.
+      Te coloca en el papel de un joven que despierta solo y sin recuerdos en un bosque oscuro y silencioso, donde nada es lo que parece.
+    </p>
+    <p>
+      A medida que exploras el entorno, te enfrentas a decisiones que afectan directamente el rumbo de la historia.
+      Deberás resolver acertijos antiguos, esquivar criaturas siniestras y descifrar los secretos ocultos entre la niebla.
+    </p>
+    <p>
+      La temática gira en torno a la culpa, el miedo y la redención. Con gráficos envolventes, sonido ambiental escalofriante y una narrativa no lineal,
+      Dark Forest garantiza mantenerte al borde de tu asiento. ¿Podrás salir con vida del bosque o te convertirás en parte de su maldición?
+    </p>
+  </main>
+
+  <div class="bottom-navbar">
+    <a href="index.html#home">🏠</a>
+    <a href="about.html">ℹ️</a>
+    <a href="contact.html">📞</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Dark Forest. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        link.style.transition = 'transform 0.2s';
+        link.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          link.style.transform = 'scale(1)';
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>
